@@ -37,7 +37,7 @@ p {
   border-radius: 12px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 45px;
+  gap: 12px;
   min-height: 275px;
   align-self: center;
   height: 375px;
@@ -54,28 +54,27 @@ p {
 }
 
 .card .content {
-  grid-column: 6 / 12;
-  padding: 30px 10px;
+  grid-column: 6 / 13;
+  padding: 20px 0px;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
   position: relative;
+  margin: 0px 20px;
 }
 
 .card .content h1 {
   font-weight: 700;
-  font-size: 25px;
-  line-height: 36px;
+  font-size: 22px;
   color: hsl(217, 19%, 35%);
 }
 
 .card .content p {
   color: hsl(212, 23%, 69%);
-  line-height: 27px;
 }
 
 .card .content .author {
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   left: 10px;
   right: 10px;
 }
@@ -152,7 +151,7 @@ p {
   display: flex;
   position: absolute;
   top: -180%;
-  right: -20.5%;
+  right: -90px;
   background: hsl(217, 19%, 35%);
   border-radius: 8px;
   padding: 15px 25px;
@@ -197,12 +196,30 @@ p {
   right: 0;
 }
 
-@media screen and (max-width: 375px) {
+@media (max-width: 992px) {
+  .card .content h1 {
+    font-size: 18px;
+    line-height: normal;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
   .card {
     grid-column: 2 / 12;
-    gap: 0px;
+    gap: 12px;
+  }
+  .card .content {
+    grid-column: 6 /13;
+    margin: 0px 15px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .card {
     height: auto;
+    grid-column: 2 / 12;
     grid-template-rows: minmax(200px, auto);
+    gap: 0px;
   }
   .card .media {
     grid-column: 1 / 13;
@@ -215,6 +232,7 @@ p {
   .card .content {
     grid-column: 1 / 13;
     padding: 10px 30px;
+    margin: 0px;
   }
   .card .content h1 {
     font-size: 16px;
